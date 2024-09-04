@@ -45,6 +45,7 @@
 }
 
 .header__desc {
+  display: inline-block;
   color: var(--main-bg-color);
   font-size: 3.5rem;
   font-style: italic;
@@ -52,8 +53,23 @@
   margin-bottom: 20px;
   text-align: center;
 
+  overflow: hidden;
+
+  white-space: nowrap;
+  width: 0;
+  animation: typing 3s steps(25, end) forwards;
+
   @include mobile {
     font-size: 2.5rem;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
 
